@@ -16,13 +16,14 @@ import org.json.JSONObject;
 public class Sample {
     private static final String serverURL = "http://vop.baidu.com/server_api";
     private static String token = "";
-    private static final String testFileName = "C:\\test\\test.pcm";
+    private static  String testFileName;
     //put your own params here
     private static final String apiKey = "mFk7xGLUk1Rezh7AIZnTH2v8";//这里的apiKey就是前面申请在应用卡片中的apiKey
     private static final String secretKey = "9aad47976de3aa42d2b9cf0dea677673";//这里的secretKey就是前面申请在应用卡片中的secretKey
     private static final String cuid = "54-EE-75-CE-C4-01";//cuid是设备的唯一标示，因为我用的是PC，所以这里用的是网卡Mac地址
 
     public static void main(String[] args) throws Exception {
+        testFileName = Sample.class.getClassLoader().getResource("test.pcm").getPath();
         getToken();
         method1();
         method2();
